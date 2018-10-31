@@ -1,0 +1,80 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+<sourceFile name="">
+<directive functionLabel="" functionName="pulse_cir_avg" label="">
+<pragma name="PIPELINE">
+<option name="II" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pulse_cir_avg" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="o_data"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pulse_cir_avg" label="">
+<pragma name="INTERFACE">
+<option name="axis" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="i_data"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pulse_cir_avg" label="">
+<pragma name="INTERFACE">
+<option name="ap_ctrl_none" positionalBoolean="mode" value=""/>
+<option name="port" positionalBoolean="4" value="return"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pulse_cir_avg" label="">
+<pragma name="RESET">
+<option name="variable" positionalBoolean="4" value="currentState"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pulse_cir_avg" label="">
+<pragma name="STREAM">
+<option name="variable" positionalBoolean="4" value="data_fifo"/>
+<option name="depth" value="8192"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pulse_cir_avg" label="">
+<pragma name="RESOURCE">
+<option name="variable" positionalBoolean="4" value="data_fifo"/>
+<option name="core" value="FIFO_BRAM"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pulse_cir_avg" label="">
+<pragma name="STREAM">
+<option name="variable" positionalBoolean="4" value="out_fifo"/>
+<option name="depth" value="1024"/>
+<option name="dim" value="1"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pulse_cir_avg" label="">
+<pragma name="RESOURCE">
+<option name="variable" positionalBoolean="4" value="out_fifo"/>
+<option name="core" value="FIFO_BRAM"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pulse_cir_avg" label="">
+<pragma name="DEPENDENCE">
+<option name="variable" value="pfetch_data"/>
+<option name="inter" positionalBoolean="type" value=""/>
+<option name="false" positionalBoolean="dependent" value=""/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pulse_cir_avg" label="">
+<pragma name="RESET">
+<option name="variable" positionalBoolean="4" value="wr_cnt"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pulse_cir_avg" label="">
+<pragma name="RESET">
+<option name="variable" positionalBoolean="4" value="rd_cnt"/>
+</pragma>
+</directive>
+<directive functionLabel="" functionName="pulse_cir_avg" label="">
+<pragma name="RESET">
+<option name="variable" positionalBoolean="4" value="threshold_met"/>
+</pragma>
+</directive>
+</sourceFile>
+</AutoPilot:ProjectResources>

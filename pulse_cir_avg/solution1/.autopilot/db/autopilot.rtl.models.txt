@@ -1,0 +1,4 @@
+pulse_cir_avg_udiv_65ns_32ns_65_69
+FIFO_pulse_cir_avg_data_fifo_V_V
+FIFO_pulse_cir_avg_out_fifo_V_V
+pulse_cir_avg
