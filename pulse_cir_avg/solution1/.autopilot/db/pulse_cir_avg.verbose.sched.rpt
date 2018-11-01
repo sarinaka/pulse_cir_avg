@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'pulse_cir_avg'
 ================================================================
-* Date:           Wed May  9 18:31:31 2018
+* Date:           Wed Oct 31 16:15:52 2018
 
 * Version:        2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)
 * Project:        pulse_cir_avg
@@ -223,7 +223,7 @@ IsGatedGlobalClock: 0
 74 --> 
 * FSM state operations: 
 
- <State 1>: 3.10ns
+ <State 1>: 4.16ns
 ST_1: avg_size_V_read [1/1] 0.00ns
 codeRepl:12  %avg_size_V_read = call i32 @_ssdm_op_Read.ap_auto.i32(i32 %avg_size_V)
 
@@ -233,45 +233,45 @@ codeRepl:13  %seq_len_V_read = call i16 @_ssdm_op_Read.ap_auto.i16(i16 %seq_len_
 ST_1: currentState_load [1/1] 0.00ns
 codeRepl:18  %currentState_load = load i2* @currentState, align 1
 
+ST_1: wr_cnt_V_load [1/1] 0.00ns
+codeRepl:25  %wr_cnt_V_load = load i10* @wr_cnt_V, align 2
+
 ST_1: seq_len_reg_V_load [1/1] 0.00ns
-codeRepl:25  %seq_len_reg_V_load = load i16* @seq_len_reg_V, align 2
+codeRepl:26  %seq_len_reg_V_load = load i16* @seq_len_reg_V, align 2
 
 ST_1: avg_size_reg_V_load [1/1] 0.00ns
-codeRepl:26  %avg_size_reg_V_load = load i32* @avg_size_reg_V, align 4
+codeRepl:27  %avg_size_reg_V_load = load i32* @avg_size_reg_V, align 4
 
 ST_1: data_in_valid_V_load [1/1] 0.00ns
-codeRepl:27  %data_in_valid_V_load = load i1* @data_in_valid_V, align 1
-
-ST_1: wr_cnt_V_load [1/1] 0.00ns
-codeRepl:29  %wr_cnt_V_load = load i10* @wr_cnt_V, align 2
+codeRepl:28  %data_in_valid_V_load = load i1* @data_in_valid_V, align 1
 
 ST_1: blk_cnt_V_load [1/1] 0.00ns
 codeRepl:30  %blk_cnt_V_load = load i8* @blk_cnt_V, align 1
 
 ST_1: stg_83 [1/1] 1.11ns
-codeRepl:31  switch i2 %currentState_load, label %._crit_edge714 [
+codeRepl:31  switch i2 %currentState_load, label %._crit_edge776 [
     i2 0, label %0
-    i2 1, label %2
-    i2 -2, label %7
+    i2 1, label %5
+    i2 -2, label %13
   ]
 
-ST_1: stg_84 [1/1] 0.00ns
-:0  br i1 %data_in_valid_V_load, label %8, label %._crit_edge717
+ST_1: stg_84 [1/1] 1.07ns
+:0  br i1 %data_in_valid_V_load, label %14, label %._crit_edge776
 
-ST_1: lhs_V_1_cast [1/1] 0.00ns
-:0  %lhs_V_1_cast = zext i32 %avg_size_reg_V_load to i33
+ST_1: lhs_V_cast [1/1] 0.00ns
+:0  %lhs_V_cast = zext i32 %avg_size_reg_V_load to i33
 
-ST_1: r_V_1 [1/1] 1.60ns
-:1  %r_V_1 = add i33 %lhs_V_1_cast, -1
+ST_1: r_V [1/1] 1.60ns
+:1  %r_V = add i33 %lhs_V_cast, -1
 
-ST_1: tmp_cast [1/1] 0.00ns
-:2  %tmp_cast = zext i8 %blk_cnt_V_load to i33
+ST_1: tmp_5_cast [1/1] 0.00ns
+:2  %tmp_5_cast = zext i8 %blk_cnt_V_load to i33
 
-ST_1: tmp_1 [1/1] 1.50ns
-:3  %tmp_1 = icmp slt i33 %tmp_cast, %r_V_1
+ST_1: tmp_6 [1/1] 1.50ns
+:3  %tmp_6 = icmp slt i33 %tmp_5_cast, %r_V
 
 ST_1: stg_89 [1/1] 0.00ns
-:4  br i1 %tmp_1, label %9, label %13
+:4  br i1 %tmp_6, label %15, label %18
 
 ST_1: lhs_V_4_cast [1/1] 0.00ns
 :3  %lhs_V_4_cast = zext i16 %seq_len_reg_V_load to i17
@@ -279,166 +279,193 @@ ST_1: lhs_V_4_cast [1/1] 0.00ns
 ST_1: r_V_5 [1/1] 1.36ns
 :4  %r_V_5 = add i17 %lhs_V_4_cast, -1
 
-ST_1: tmp_14_cast [1/1] 0.00ns
-:5  %tmp_14_cast = zext i10 %wr_cnt_V_load to i17
+ST_1: tmp_15_cast [1/1] 0.00ns
+:5  %tmp_15_cast = zext i10 %wr_cnt_V_load to i17
 
-ST_1: tmp_11 [1/1] 1.27ns
-:6  %tmp_11 = icmp eq i17 %tmp_14_cast, %r_V_5
+ST_1: tmp_12 [1/1] 1.27ns
+:6  %tmp_12 = icmp eq i17 %tmp_15_cast, %r_V_5
 
 ST_1: stg_94 [1/1] 0.00ns
-:7  br i1 %tmp_11, label %17, label %18
+:7  br i1 %tmp_12, label %22, label %23
 
-ST_1: tmp_12 [1/1] 1.30ns
-:0  %tmp_12 = add i10 %wr_cnt_V_load, 1
+ST_1: tmp_13 [1/1] 1.30ns
+:0  %tmp_13 = add i10 %wr_cnt_V_load, 1
 
 ST_1: stg_96 [1/1] 1.07ns
-:1  store i10 %tmp_12, i10* @wr_cnt_V, align 2
+:1  br label %._crit_edge776
 
-ST_1: stg_97 [1/1] 1.07ns
-:0  store i10 0, i10* @wr_cnt_V, align 2
+ST_1: stg_97 [1/1] 0.89ns
+:0  store i8 0, i8* @blk_cnt_V, align 1
 
 ST_1: stg_98 [1/1] 0.89ns
-:1  store i8 0, i8* @blk_cnt_V, align 1
+:1  store i2 0, i2* @currentState, align 1
 
-ST_1: stg_99 [1/1] 0.89ns
-:2  store i2 0, i2* @currentState, align 1
+ST_1: stg_99 [1/1] 1.07ns
+:2  br label %._crit_edge776
 
-ST_1: lhs_V_2_cast [1/1] 0.00ns
-:4  %lhs_V_2_cast = zext i16 %seq_len_reg_V_load to i17
+ST_1: lhs_V_1_cast [1/1] 0.00ns
+:4  %lhs_V_1_cast = zext i16 %seq_len_reg_V_load to i17
 
-ST_1: r_V_2 [1/1] 1.36ns
-:5  %r_V_2 = add i17 %lhs_V_2_cast, -1
+ST_1: r_V_1 [1/1] 1.36ns
+:5  %r_V_1 = add i17 %lhs_V_1_cast, -1
 
-ST_1: tmp_8_cast [1/1] 0.00ns
-:6  %tmp_8_cast = zext i10 %wr_cnt_V_load to i17
-
-ST_1: tmp_9 [1/1] 1.27ns
-:7  %tmp_9 = icmp eq i17 %tmp_8_cast, %r_V_2
-
-ST_1: stg_104 [1/1] 0.00ns
-:8  br i1 %tmp_9, label %10, label %11
-
-ST_1: tmp_6 [1/1] 1.30ns
-:0  %tmp_6 = add i10 %wr_cnt_V_load, 1
-
-ST_1: stg_106 [1/1] 1.07ns
-:1  store i10 %tmp_6, i10* @wr_cnt_V, align 2
-
-ST_1: stg_107 [1/1] 1.07ns
-:0  store i10 0, i10* @wr_cnt_V, align 2
-
-ST_1: tmp_s [1/1] 1.24ns
-:1  %tmp_s = add i8 %blk_cnt_V_load, 1
-
-ST_1: stg_109 [1/1] 0.89ns
-:2  store i8 %tmp_s, i8* @blk_cnt_V, align 1
-
-ST_1: stg_110 [1/1] 0.89ns
-:3  store i2 -2, i2* @currentState, align 1
-
-ST_1: stg_111 [1/1] 0.89ns
-._crit_edge717:0  br label %._crit_edge714
-
-ST_1: stg_112 [1/1] 0.00ns
-:0  br i1 %data_in_valid_V_load, label %3, label %._crit_edge716
-
-ST_1: lhs_V_cast [1/1] 0.00ns
-:2  %lhs_V_cast = zext i16 %seq_len_reg_V_load to i17
-
-ST_1: r_V [1/1] 1.36ns
-:3  %r_V = add i17 %lhs_V_cast, -1
-
-ST_1: tmp_6_cast [1/1] 0.00ns
-:4  %tmp_6_cast = zext i10 %wr_cnt_V_load to i17
+ST_1: tmp_4_cast [1/1] 0.00ns
+:6  %tmp_4_cast = zext i10 %wr_cnt_V_load to i17
 
 ST_1: tmp_7 [1/1] 1.27ns
-:5  %tmp_7 = icmp eq i17 %tmp_6_cast, %r_V
+:7  %tmp_7 = icmp eq i17 %tmp_4_cast, %r_V_1
 
-ST_1: stg_117 [1/1] 0.00ns
-:6  br i1 %tmp_7, label %4, label %5
+ST_1: stg_104 [1/1] 0.00ns
+:8  br i1 %tmp_7, label %16, label %17
 
-ST_1: tmp_3 [1/1] 1.30ns
-:0  %tmp_3 = add i10 %wr_cnt_V_load, 1
+ST_1: tmp_5 [1/1] 1.30ns
+:0  %tmp_5 = add i10 %wr_cnt_V_load, 1
 
-ST_1: stg_119 [1/1] 1.07ns
-:1  store i10 %tmp_3, i10* @wr_cnt_V, align 2
+ST_1: stg_106 [1/1] 1.07ns
+:1  br label %._crit_edge776
 
-ST_1: stg_120 [1/1] 0.89ns
-:2  br label %6
+ST_1: tmp_4 [1/1] 1.24ns
+:0  %tmp_4 = add i8 %blk_cnt_V_load, 1
 
-ST_1: stg_121 [1/1] 1.07ns
-:0  store i10 0, i10* @wr_cnt_V, align 2
+ST_1: stg_108 [1/1] 0.89ns
+:1  store i8 %tmp_4, i8* @blk_cnt_V, align 1
 
-ST_1: stg_122 [1/1] 0.89ns
-:1  store i8 1, i8* @blk_cnt_V, align 1
+ST_1: stg_109 [1/1] 0.89ns
+:2  store i2 -2, i2* @currentState, align 1
 
-ST_1: stg_123 [1/1] 0.89ns
-:2  br label %6
+ST_1: stg_110 [1/1] 1.07ns
+:3  br label %._crit_edge776
 
-ST_1: storemerge1 [1/1] 0.00ns
-:0  %storemerge1 = phi i2 [ 1, %5 ], [ -2, %4 ]
+ST_1: stg_111 [1/1] 1.07ns
+:0  br i1 %data_in_valid_V_load, label %6, label %._crit_edge776
+
+ST_1: tmp_2 [1/1] 0.00ns
+:0  %tmp_2 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %avg_size_reg_V_load, i32 1, i32 31)
+
+ST_1: icmp5 [1/1] 1.48ns
+:1  %icmp5 = icmp eq i31 %tmp_2, 0
+
+ST_1: stg_114 [1/1] 0.00ns
+:3  br i1 %icmp5, label %7, label %8
+
+ST_1: lhs_V_2_cast [1/1] 0.00ns
+:0  %lhs_V_2_cast = zext i16 %seq_len_reg_V_load to i17
+
+ST_1: r_V_2 [1/1] 1.36ns
+:1  %r_V_2 = add i17 %lhs_V_2_cast, -1
+
+ST_1: tmp_9_cast [1/1] 0.00ns
+:2  %tmp_9_cast = zext i10 %wr_cnt_V_load to i17
+
+ST_1: tmp_3 [1/1] 1.27ns
+:3  %tmp_3 = icmp eq i17 %tmp_9_cast, %r_V_2
+
+ST_1: stg_119 [1/1] 0.00ns
+:4  br i1 %tmp_3, label %10, label %11
+
+ST_1: tmp_11 [1/1] 1.30ns
+:0  %tmp_11 = add i10 %wr_cnt_V_load, 1
+
+ST_1: stg_121 [1/1] 0.89ns
+:1  br label %12
+
+ST_1: not_tmp_2 [1/1] 0.71ns
+:0  %not_tmp_2 = xor i1 %icmp5, true
+
+ST_1: storemerge1_cast [1/1] 0.00ns
+:1  %storemerge1_cast = zext i1 %not_tmp_2 to i8
+
+ST_1: storemerge2 [1/1] 0.71ns
+:2  %storemerge2 = select i1 %icmp5, i2 0, i2 -2
 
 ST_1: stg_125 [1/1] 0.89ns
-:1  store i2 %storemerge1, i2* @currentState, align 1
+:3  store i8 %storemerge1_cast, i8* @blk_cnt_V, align 1
 
 ST_1: stg_126 [1/1] 0.89ns
-._crit_edge716:0  br label %._crit_edge714
+:4  br label %12
 
-ST_1: stg_127 [1/1] 0.00ns
-:0  store i16 %seq_len_V_read, i16* @seq_len_reg_V, align 2
-
-ST_1: stg_128 [1/1] 0.00ns
-:1  store i32 %avg_size_V_read, i32* @avg_size_reg_V, align 4
-
-ST_1: stg_129 [1/1] 0.00ns
-:2  br i1 %data_in_valid_V_load, label %1, label %._crit_edge715
-
-ST_1: tmp_2 [1/1] 1.30ns
-:2  %tmp_2 = add i10 %wr_cnt_V_load, 1
-
-ST_1: stg_131 [1/1] 1.07ns
-:3  store i10 %tmp_2, i10* @wr_cnt_V, align 2
-
-ST_1: stg_132 [1/1] 0.89ns
-:4  store i2 1, i2* @currentState, align 1
-
-ST_1: stg_133 [1/1] 0.89ns
-._crit_edge715:0  br label %._crit_edge714
-
-ST_1: tmp_17 [1/1] 0.00ns
-._crit_edge718:0  %tmp_17 = call i1 @_ssdm_op_NbReadReq.axis.i32P.i1P(i32* %i_data_V_data_V, i1* %i_data_V_last_V, i32 1)
-
-ST_1: stg_135 [1/1] 0.89ns
-._crit_edge718:1  br i1 %tmp_17, label %21, label %._crit_edge722
-
-ST_1: empty_6 [1/1] 0.00ns
-:0  %empty_6 = call { i32, i1 } @_ssdm_op_Read.axis.volatile.i32P.i1P(i32* %i_data_V_data_V, i1* %i_data_V_last_V)
-
-ST_1: tmp_data_V_1_7 [1/1] 0.00ns
-:1  %tmp_data_V_1_7 = extractvalue { i32, i1 } %empty_6, 0
-
-ST_1: stg_138 [1/1] 0.89ns
-:3  br label %._crit_edge722
+ST_1: wr_cnt_V_new_1 [1/1] 0.00ns
+:0  %wr_cnt_V_new_1 = phi i10 [ 0, %10 ], [ %tmp_11, %11 ]
 
 ST_1: storemerge3 [1/1] 0.00ns
-._crit_edge722:0  %storemerge3 = phi i1 [ true, %21 ], [ false, %._crit_edge718 ]
+:1  %storemerge3 = phi i2 [ %storemerge2, %10 ], [ 1, %11 ]
 
-ST_1: stg_140 [1/1] 0.00ns
-._crit_edge722:1  store i1 %storemerge3, i1* @data_in_valid_V, align 1
+ST_1: stg_129 [1/1] 0.89ns
+:2  store i2 %storemerge3, i2* @currentState, align 1
+
+ST_1: stg_130 [1/1] 1.07ns
+:3  br label %._crit_edge776
+
+ST_1: stg_131 [1/1] 0.00ns
+:0  store i16 %seq_len_V_read, i16* @seq_len_reg_V, align 2
+
+ST_1: stg_132 [1/1] 0.00ns
+:1  store i32 %avg_size_V_read, i32* @avg_size_reg_V, align 4
+
+ST_1: stg_133 [1/1] 1.07ns
+:2  br i1 %data_in_valid_V_load, label %1, label %._crit_edge776
+
+ST_1: stg_134 [1/1] 0.89ns
+:0  store i2 1, i2* @currentState, align 1
+
+ST_1: tmp_1 [1/1] 0.00ns
+:1  %tmp_1 = call i31 @_ssdm_op_PartSelect.i31.i32.i32.i32(i32 %avg_size_V_read, i32 1, i32 31)
+
+ST_1: icmp [1/1] 1.48ns
+:2  %icmp = icmp eq i31 %tmp_1, 0
+
+ST_1: stg_137 [1/1] 0.00ns
+:4  br i1 %icmp, label %2, label %3
+
+ST_1: stg_138 [1/1] 1.07ns
+:0  br label %._crit_edge776
+
+ST_1: wr_cnt_V_flag_7 [1/1] 0.00ns
+._crit_edge776:0  %wr_cnt_V_flag_7 = phi i1 [ false, %codeRepl ], [ true, %0 ], [ true, %4 ], [ true, %12 ], [ false, %5 ], [ false, %13 ], [ true, %22 ], [ true, %23 ], [ true, %16 ], [ true, %17 ]
+
+ST_1: wr_cnt_V_new_7 [1/1] 0.00ns
+._crit_edge776:1  %wr_cnt_V_new_7 = phi i10 [ undef, %codeRepl ], [ 0, %0 ], [ 1, %4 ], [ %wr_cnt_V_new_1, %12 ], [ undef, %5 ], [ undef, %13 ], [ 0, %22 ], [ %tmp_13, %23 ], [ 0, %16 ], [ %tmp_5, %17 ]
+
+ST_1: stg_141 [1/1] 0.00ns
+._crit_edge776:4  br i1 %wr_cnt_V_flag_7, label %mergeST, label %._crit_edge776.new
+
+ST_1: stg_142 [1/1] 0.00ns
+mergeST:0  store i10 %wr_cnt_V_new_7, i10* @wr_cnt_V, align 2
+
+ST_1: tmp_18 [1/1] 0.00ns
+._crit_edge779:0  %tmp_18 = call i1 @_ssdm_op_NbReadReq.axis.i32P.i1P(i32* %i_data_V_data_V, i1* %i_data_V_last_V, i32 1)
+
+ST_1: stg_144 [1/1] 0.89ns
+._crit_edge779:1  br i1 %tmp_18, label %24, label %._crit_edge783
+
+ST_1: empty_8 [1/1] 0.00ns
+:0  %empty_8 = call { i32, i1 } @_ssdm_op_Read.axis.volatile.i32P.i1P(i32* %i_data_V_data_V, i1* %i_data_V_last_V)
+
+ST_1: tmp_data_V_1_9 [1/1] 0.00ns
+:1  %tmp_data_V_1_9 = extractvalue { i32, i1 } %empty_8, 0
+
+ST_1: stg_147 [1/1] 0.89ns
+:3  br label %._crit_edge783
+
+ST_1: storemerge5 [1/1] 0.00ns
+._crit_edge783:0  %storemerge5 = phi i1 [ true, %24 ], [ false, %._crit_edge779 ]
+
+ST_1: stg_149 [1/1] 0.00ns
+._crit_edge783:1  store i1 %storemerge5, i1* @data_in_valid_V, align 1
 
 
  <State 2>: 4.27ns
 ST_2: data_in_reg_V_load [1/1] 0.00ns
-codeRepl:28  %data_in_reg_V_load = load i32* @data_in_reg_V, align 4
+codeRepl:29  %data_in_reg_V_load = load i32* @data_in_reg_V, align 4
 
-ST_2: tmp_5 [1/1] 1.50ns
-:0  %tmp_5 = icmp eq i32 %avg_size_reg_V_load, 0
+ST_2: tmp_8 [1/1] 1.50ns
+:0  %tmp_8 = icmp eq i32 %avg_size_reg_V_load, 0
 
 ST_2: tmp_V_4 [1/1] 2.19ns
 :1  %tmp_V_4 = call i64 @_ssdm_op_Read.ap_fifo.volatile.i64P(i64* @data_fifo_V_V)
 
-ST_2: stg_144 [1/1] 0.00ns
-:2  br i1 %tmp_5, label %15, label %14
+ST_2: stg_153 [1/1] 0.00ns
+:2  br i1 %tmp_8, label %20, label %19
 
 ST_2: lhs_V [1/1] 0.00ns
 :0  %lhs_V = zext i32 %data_in_reg_V_load to i65
@@ -449,49 +476,25 @@ ST_2: rhs_V [1/1] 0.00ns
 ST_2: r_V_3 [1/1] 2.08ns
 :2  %r_V_3 = add i65 %rhs_V, %lhs_V
 
-ST_2: tmp_8 [1/1] 0.00ns
-:0  %tmp_8 = trunc i64 %tmp_V_4 to i32
+ST_2: tmp_9 [1/1] 0.00ns
+:0  %tmp_9 = trunc i64 %tmp_V_4 to i32
 
 ST_2: tmp_V_2 [1/1] 2.19ns
 :0  %tmp_V_2 = call i64 @_ssdm_op_Read.ap_fifo.volatile.i64P(i64* @data_fifo_V_V)
 
 ST_2: seq_len_reg_V_loc [1/1] 0.00ns
-._crit_edge714:0  %seq_len_reg_V_loc = phi i16 [ %seq_len_reg_V_load, %codeRepl ], [ %seq_len_reg_V_load, %._crit_edge717 ], [ %seq_len_reg_V_load, %._crit_edge716 ], [ %seq_len_V_read, %._crit_edge715 ]
+._crit_edge776:2  %seq_len_reg_V_loc = phi i16 [ %seq_len_reg_V_load, %codeRepl ], [ %seq_len_V_read, %0 ], [ %seq_len_V_read, %4 ], [ %seq_len_reg_V_load, %12 ], [ %seq_len_reg_V_load, %5 ], [ %seq_len_reg_V_load, %13 ], [ %seq_len_reg_V_load, %22 ], [ %seq_len_reg_V_load, %23 ], [ %seq_len_reg_V_load, %16 ], [ %seq_len_reg_V_load, %17 ]
 
-ST_2: stg_151 [1/1] 0.00ns
-:2  store i32 %tmp_data_V_1_7, i32* @data_in_reg_V, align 4
+ST_2: stg_160 [1/1] 0.00ns
+:2  store i32 %tmp_data_V_1_9, i32* @data_in_reg_V, align 4
 
 
- <State 3>: 4.27ns
+ <State 3>: 3.58ns
 ST_3: tmp_10 [1/1] 0.00ns
 :3  %tmp_10 = zext i32 %avg_size_reg_V_load to i65
 
 ST_3: r_V_4 [69/69] 3.58ns
 :4  %r_V_4 = udiv i65 %r_V_3, %tmp_10
-
-ST_3: tmp_data_V [1/1] 1.60ns
-:1  %tmp_data_V = add i32 %data_in_reg_V_load, %tmp_8
-
-ST_3: tmp_4 [1/1] 0.00ns
-:1  %tmp_4 = zext i32 %data_in_reg_V_load to i64
-
-ST_3: tmp_V_3 [1/1] 2.08ns
-:2  %tmp_V_3 = add i64 %tmp_V_2, %tmp_4
-
-ST_3: stg_157 [1/1] 2.19ns
-:3  call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* @data_fifo_V_V, i64 %tmp_V_3)
-
-ST_3: tmp_V_1 [1/1] 0.00ns
-:0  %tmp_V_1 = zext i32 %data_in_reg_V_load to i64
-
-ST_3: stg_159 [1/1] 2.19ns
-:1  call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* @data_fifo_V_V, i64 %tmp_V_1)
-
-ST_3: tmp_V [1/1] 0.00ns
-:0  %tmp_V = zext i32 %data_in_reg_V_load to i64
-
-ST_3: stg_161 [1/1] 2.19ns
-:1  call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* @data_fifo_V_V, i64 %tmp_V)
 
 
  <State 4>: 3.58ns
@@ -836,36 +839,66 @@ ST_71: r_V_4 [1/69] 3.58ns
 ST_71: tmp_data_V_1 [1/1] 0.00ns
 :5  %tmp_data_V_1 = trunc i65 %r_V_4 to i32
 
-ST_71: stg_231 [1/1] 0.89ns
-:2  br label %16
+ST_71: tmp_data_V [1/1] 1.60ns
+:1  %tmp_data_V = add i32 %data_in_reg_V_load, %tmp_9
+
+ST_71: stg_233 [1/1] 0.89ns
+:2  br label %21
 
 
- <State 72>: 3.08ns
-ST_72: stg_232 [1/1] 0.89ns
-:6  br label %16
+ <State 72>: 4.27ns
+ST_72: stg_234 [1/1] 0.89ns
+:6  br label %21
 
-ST_72: p_2 [1/1] 0.00ns
-:0  %p_2 = phi i32 [ %tmp_data_V_1, %14 ], [ %tmp_data_V, %15 ]
+ST_72: p_4 [1/1] 0.00ns
+:0  %p_4 = phi i32 [ %tmp_data_V_1, %19 ], [ %tmp_data_V, %20 ]
 
 ST_72: tmp_V_5 [1/1] 0.00ns
-:1  %tmp_V_5 = zext i32 %p_2 to i64
+:1  %tmp_V_5 = zext i32 %p_4 to i64
 
-ST_72: stg_235 [1/1] 2.19ns
+ST_72: stg_237 [1/1] 2.19ns
 :2  call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* @out_fifo_V_V, i64 %tmp_V_5)
+
+ST_72: tmp_s [1/1] 0.00ns
+:1  %tmp_s = zext i32 %data_in_reg_V_load to i64
+
+ST_72: tmp_V_3 [1/1] 2.08ns
+:2  %tmp_V_3 = add i64 %tmp_V_2, %tmp_s
+
+ST_72: stg_240 [1/1] 2.19ns
+:3  call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* @data_fifo_V_V, i64 %tmp_V_3)
+
+ST_72: tmp_V_1 [1/1] 0.00ns
+:2  %tmp_V_1 = zext i32 %data_in_reg_V_load to i64
+
+ST_72: stg_242 [1/1] 2.19ns
+:0  call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* @data_fifo_V_V, i64 %tmp_V_1)
+
+ST_72: stg_243 [1/1] 2.19ns
+:0  call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* @out_fifo_V_V, i64 %tmp_V_1)
+
+ST_72: tmp_V [1/1] 0.00ns
+:3  %tmp_V = zext i32 %data_in_reg_V_load to i64
+
+ST_72: stg_245 [1/1] 2.19ns
+:0  call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* @data_fifo_V_V, i64 %tmp_V)
+
+ST_72: stg_246 [1/1] 2.19ns
+:0  call void @_ssdm_op_Write.ap_fifo.volatile.i64P(i64* @out_fifo_V_V, i64 %tmp_V)
 
 
  <State 73>: 3.34ns
 ST_73: tmp [1/1] 0.00ns
-._crit_edge714:1  %tmp = call i1 @_ssdm_op_NbReadReq.ap_fifo.i64P(i64* @out_fifo_V_V, i32 1)
+._crit_edge776:3  %tmp = call i1 @_ssdm_op_NbReadReq.ap_fifo.i64P(i64* @out_fifo_V_V, i32 1)
 
-ST_73: stg_237 [1/1] 0.00ns
-._crit_edge714:2  br i1 %tmp, label %_ifconv, label %._crit_edge718
+ST_73: stg_248 [1/1] 0.00ns
+._crit_edge776.new:0  br i1 %tmp, label %_ifconv, label %._crit_edge779
 
 ST_73: tmp_V_6 [1/1] 2.19ns
 _ifconv:0  %tmp_V_6 = call i64 @_ssdm_op_Read.ap_fifo.volatile.i64P(i64* @out_fifo_V_V)
 
-ST_73: tmp_data_V_5 [1/1] 0.00ns
-_ifconv:1  %tmp_data_V_5 = trunc i64 %tmp_V_6 to i32
+ST_73: tmp_data_V_7 [1/1] 0.00ns
+_ifconv:1  %tmp_data_V_7 = trunc i64 %tmp_V_6 to i32
 
 ST_73: rd_cnt_V_load [1/1] 0.00ns
 _ifconv:4  %rd_cnt_V_load = load i10* @rd_cnt_V, align 2
@@ -876,142 +909,130 @@ _ifconv:5  %lhs_V_5_cast = zext i16 %seq_len_reg_V_loc to i17
 ST_73: r_V_6 [1/1] 1.36ns
 _ifconv:6  %r_V_6 = add i17 -1, %lhs_V_5_cast
 
-ST_73: tmp_19_cast [1/1] 0.00ns
-_ifconv:7  %tmp_19_cast = zext i10 %rd_cnt_V_load to i17
+ST_73: tmp_20_cast [1/1] 0.00ns
+_ifconv:7  %tmp_20_cast = zext i10 %rd_cnt_V_load to i17
 
-ST_73: tmp_14 [1/1] 1.27ns
-_ifconv:8  %tmp_14 = icmp eq i17 %tmp_19_cast, %r_V_6
+ST_73: tmp_15 [1/1] 1.27ns
+_ifconv:8  %tmp_15 = icmp eq i17 %tmp_20_cast, %r_V_6
 
-ST_73: tmp_16 [1/1] 1.30ns
-_ifconv:13  %tmp_16 = add i10 1, %rd_cnt_V_load
+ST_73: tmp_17 [1/1] 1.30ns
+_ifconv:13  %tmp_17 = add i10 1, %rd_cnt_V_load
 
-ST_73: storemerge2 [1/1] 0.71ns
-_ifconv:14  %storemerge2 = select i1 %tmp_14, i10 0, i10 %tmp_16
+ST_73: storemerge4 [1/1] 0.71ns
+_ifconv:14  %storemerge4 = select i1 %tmp_15, i10 0, i10 %tmp_17
 
-ST_73: stg_247 [1/1] 0.00ns
-_ifconv:15  store i10 %storemerge2, i10* @rd_cnt_V, align 2
+ST_73: stg_258 [1/1] 0.00ns
+_ifconv:15  store i10 %storemerge4, i10* @rd_cnt_V, align 2
 
 
  <State 74>: 2.75ns
 ST_74: empty [1/1] 0.00ns
 codeRepl:0  %empty = call i32 (...)* @_ssdm_op_SpecChannel([14 x i8]* @data_fifo_OC_V_OC_V_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 8192, i32 8192, i64* @data_fifo_V_V, i64* @data_fifo_V_V)
 
-ST_74: stg_249 [1/1] 0.00ns
+ST_74: stg_260 [1/1] 0.00ns
 codeRepl:1  call void (...)* @_ssdm_op_SpecInterface(i64* @data_fifo_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
-ST_74: empty_4 [1/1] 0.00ns
-codeRepl:2  %empty_4 = call i32 (...)* @_ssdm_op_SpecChannel([13 x i8]* @out_fifo_OC_V_OC_V_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1024, i32 1024, i64* @out_fifo_V_V, i64* @out_fifo_V_V)
-
-ST_74: stg_251 [1/1] 0.00ns
-codeRepl:3  call void (...)* @_ssdm_op_SpecInterface(i64* @out_fifo_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
-
-ST_74: stg_252 [1/1] 0.00ns
-codeRepl:4  call void (...)* @_ssdm_op_SpecBitsMap(i32* %i_data_V_data_V), !map !7
-
-ST_74: stg_253 [1/1] 0.00ns
-codeRepl:5  call void (...)* @_ssdm_op_SpecBitsMap(i1* %i_data_V_last_V), !map !11
-
-ST_74: stg_254 [1/1] 0.00ns
-codeRepl:6  call void (...)* @_ssdm_op_SpecBitsMap(i32* %o_data_V_data_V), !map !15
-
-ST_74: stg_255 [1/1] 0.00ns
-codeRepl:7  call void (...)* @_ssdm_op_SpecBitsMap(i1* %o_data_V_last_V), !map !19
-
-ST_74: stg_256 [1/1] 0.00ns
-codeRepl:8  call void (...)* @_ssdm_op_SpecBitsMap(i32 %threshold_V), !map !23
-
-ST_74: stg_257 [1/1] 0.00ns
-codeRepl:9  call void (...)* @_ssdm_op_SpecBitsMap(i16 %seq_len_V), !map !29
-
-ST_74: stg_258 [1/1] 0.00ns
-codeRepl:10  call void (...)* @_ssdm_op_SpecBitsMap(i32 %avg_size_V), !map !33
-
-ST_74: stg_259 [1/1] 0.00ns
-codeRepl:11  call void (...)* @_ssdm_op_SpecTopModule([14 x i8]* @pulse_cir_avg_str) nounwind
-
-ST_74: stg_260 [1/1] 0.00ns
-codeRepl:14  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
-
-ST_74: stg_261 [1/1] 0.00ns
-codeRepl:15  call void (...)* @_ssdm_op_SpecInterface(i32* %o_data_V_data_V, i1* %o_data_V_last_V, [5 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind
+ST_74: empty_6 [1/1] 0.00ns
+codeRepl:2  %empty_6 = call i32 (...)* @_ssdm_op_SpecChannel([13 x i8]* @out_fifo_OC_V_OC_V_str, i32 1, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 1024, i32 1024, i64* @out_fifo_V_V, i64* @out_fifo_V_V)
 
 ST_74: stg_262 [1/1] 0.00ns
-codeRepl:16  call void (...)* @_ssdm_op_SpecInterface(i32* %i_data_V_data_V, i1* %i_data_V_last_V, [5 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind
+codeRepl:3  call void (...)* @_ssdm_op_SpecInterface(i64* @out_fifo_V_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
 ST_74: stg_263 [1/1] 0.00ns
-codeRepl:17  call void (...)* @_ssdm_op_SpecInterface(i32 0, [13 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind
+codeRepl:4  call void (...)* @_ssdm_op_SpecBitsMap(i32* %i_data_V_data_V), !map !7
 
 ST_74: stg_264 [1/1] 0.00ns
-codeRepl:19  call void (...)* @_ssdm_op_SpecReset(i2* @currentState, i32 1, [1 x i8]* @p_str) nounwind
+codeRepl:5  call void (...)* @_ssdm_op_SpecBitsMap(i1* %i_data_V_last_V), !map !11
 
 ST_74: stg_265 [1/1] 0.00ns
-codeRepl:20  call void (...)* @_ssdm_op_SpecMemCore(i64* @data_fifo_V_V, [1 x i8]* @p_str, [10 x i8]* @p_str3, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
+codeRepl:6  call void (...)* @_ssdm_op_SpecBitsMap(i32* %o_data_V_data_V), !map !15
 
 ST_74: stg_266 [1/1] 0.00ns
-codeRepl:21  call void (...)* @_ssdm_op_SpecMemCore(i64* @out_fifo_V_V, [1 x i8]* @p_str, [10 x i8]* @p_str3, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
+codeRepl:7  call void (...)* @_ssdm_op_SpecBitsMap(i1* %o_data_V_last_V), !map !19
 
 ST_74: stg_267 [1/1] 0.00ns
-codeRepl:22  call void (...)* @_ssdm_op_SpecReset(i10* @wr_cnt_V, i32 1, [1 x i8]* @p_str) nounwind
+codeRepl:8  call void (...)* @_ssdm_op_SpecBitsMap(i32 %threshold_V), !map !23
 
 ST_74: stg_268 [1/1] 0.00ns
-codeRepl:23  call void (...)* @_ssdm_op_SpecReset(i10* @rd_cnt_V, i32 1, [1 x i8]* @p_str) nounwind
+codeRepl:9  call void (...)* @_ssdm_op_SpecBitsMap(i16 %seq_len_V), !map !29
 
 ST_74: stg_269 [1/1] 0.00ns
-codeRepl:24  call void (...)* @_ssdm_op_SpecReset(i32 1, [1 x i8]* @p_str) nounwind
+codeRepl:10  call void (...)* @_ssdm_op_SpecBitsMap(i32 %avg_size_V), !map !33
 
 ST_74: stg_270 [1/1] 0.00ns
-:2  br label %19
+codeRepl:11  call void (...)* @_ssdm_op_SpecTopModule([14 x i8]* @pulse_cir_avg_str) nounwind
 
 ST_74: stg_271 [1/1] 0.00ns
-:3  br label %19
+codeRepl:14  call void (...)* @_ssdm_op_SpecPipeline(i32 1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind
 
 ST_74: stg_272 [1/1] 0.00ns
-:0  br label %20
+codeRepl:15  call void (...)* @_ssdm_op_SpecInterface(i32* %o_data_V_data_V, i1* %o_data_V_last_V, [5 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind
 
 ST_74: stg_273 [1/1] 0.00ns
-:2  br label %12
+codeRepl:16  call void (...)* @_ssdm_op_SpecInterface(i32* %i_data_V_data_V, i1* %i_data_V_last_V, [5 x i8]* @p_str1, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind
 
 ST_74: stg_274 [1/1] 0.00ns
-:4  br label %12
+codeRepl:17  call void (...)* @_ssdm_op_SpecInterface(i32 0, [13 x i8]* @p_str2, i32 0, i32 0, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str) nounwind
 
 ST_74: stg_275 [1/1] 0.00ns
-:0  br label %20
+codeRepl:19  call void (...)* @_ssdm_op_SpecReset(i2* @currentState, i32 1, [1 x i8]* @p_str) nounwind
 
 ST_74: stg_276 [1/1] 0.00ns
-:0  br label %._crit_edge717
+codeRepl:20  call void (...)* @_ssdm_op_SpecMemCore(i64* @data_fifo_V_V, [1 x i8]* @p_str, [10 x i8]* @p_str3, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
 ST_74: stg_277 [1/1] 0.00ns
-:2  br label %._crit_edge716
+codeRepl:21  call void (...)* @_ssdm_op_SpecMemCore(i64* @out_fifo_V_V, [1 x i8]* @p_str, [10 x i8]* @p_str3, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)
 
 ST_74: stg_278 [1/1] 0.00ns
-:5  br label %._crit_edge715
+codeRepl:22  call void (...)* @_ssdm_op_SpecReset(i10* @wr_cnt_V, i32 1, [1 x i8]* @p_str) nounwind
+
+ST_74: stg_279 [1/1] 0.00ns
+codeRepl:23  call void (...)* @_ssdm_op_SpecReset(i10* @rd_cnt_V, i32 1, [1 x i8]* @p_str) nounwind
+
+ST_74: stg_280 [1/1] 0.00ns
+codeRepl:24  call void (...)* @_ssdm_op_SpecReset(i32 1, [1 x i8]* @p_str) nounwind
+
+ST_74: stg_281 [1/1] 0.00ns
+:1  br label %9
+
+ST_74: stg_282 [1/1] 0.00ns
+:1  br label %9
+
+ST_74: stg_283 [1/1] 0.00ns
+:1  br label %4
+
+ST_74: stg_284 [1/1] 0.00ns
+:1  br label %4
+
+ST_74: stg_285 [1/1] 0.00ns
+mergeST:1  br label %._crit_edge776.new
 
 ST_74: out_sample_cnt_V_load [1/1] 0.00ns
 _ifconv:2  %out_sample_cnt_V_load = load i9* @out_sample_cnt_V, align 2
 
-ST_74: tmp_13 [1/1] 1.33ns
-_ifconv:3  %tmp_13 = icmp eq i9 %out_sample_cnt_V_load, -253
+ST_74: tmp_14 [1/1] 1.33ns
+_ifconv:3  %tmp_14 = icmp eq i9 %out_sample_cnt_V_load, -253
 
-ST_74: tmp_15 [1/1] 1.30ns
-_ifconv:9  %tmp_15 = add i9 1, %out_sample_cnt_V_load
+ST_74: tmp_16 [1/1] 1.30ns
+_ifconv:9  %tmp_16 = add i9 1, %out_sample_cnt_V_load
 
 ST_74: tmp_last_V [1/1] 0.71ns
-_ifconv:10  %tmp_last_V = or i1 %tmp_13, %tmp_14
+_ifconv:10  %tmp_last_V = or i1 %tmp_14, %tmp_15
 
 ST_74: storemerge [1/1] 0.71ns
-_ifconv:11  %storemerge = select i1 %tmp_last_V, i9 0, i9 %tmp_15
+_ifconv:11  %storemerge = select i1 %tmp_last_V, i9 0, i9 %tmp_16
 
-ST_74: stg_284 [1/1] 0.00ns
+ST_74: stg_291 [1/1] 0.00ns
 _ifconv:12  store i9 %storemerge, i9* @out_sample_cnt_V, align 2
 
-ST_74: stg_285 [1/1] 0.00ns
-_ifconv:16  call void @_ssdm_op_Write.axis.volatile.i32P.i1P(i32* %o_data_V_data_V, i1* %o_data_V_last_V, i32 %tmp_data_V_5, i1 %tmp_last_V)
+ST_74: stg_292 [1/1] 0.00ns
+_ifconv:16  call void @_ssdm_op_Write.axis.volatile.i32P.i1P(i32* %o_data_V_data_V, i1* %o_data_V_last_V, i32 %tmp_data_V_7, i1 %tmp_last_V)
 
-ST_74: stg_286 [1/1] 0.00ns
-_ifconv:17  br label %._crit_edge718
+ST_74: stg_293 [1/1] 0.00ns
+_ifconv:17  br label %._crit_edge779
 
-ST_74: stg_287 [1/1] 0.00ns
-._crit_edge722:2  ret void
+ST_74: stg_294 [1/1] 0.00ns
+._crit_edge783:2  ret void
 
 
 

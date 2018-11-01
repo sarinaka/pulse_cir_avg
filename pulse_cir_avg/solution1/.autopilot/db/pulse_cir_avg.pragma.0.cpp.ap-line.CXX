@@ -1,5 +1,5 @@
-#pragma line 1 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" ::: -10
-#pragma line 1 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 1 ::: -9
+#pragma line 1 "pulse_cir_avg.cpp" ::: -10
+#pragma line 1 "pulse_cir_avg.cpp" 1 ::: -9
 #pragma line 1 "<built-in>" 1 ::: -8
 #pragma line 1 "<built-in>" 3 ::: -7
 #pragma line 155 "<built-in>" 3 ::: -6
@@ -9,11 +9,11 @@
 #pragma line 407 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/etc/autopilot_ssdm_op.h" ::: 188
 #pragma line 6 "<command line>" 2 ::: 191
 #pragma line 1 "<built-in>" 2 ::: 192
-#pragma line 1 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 2 ::: 193
+#pragma line 1 "pulse_cir_avg.cpp" 2 ::: 193
 #pragma line 1 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/hls_stream.h" 1 ::: 238
 #pragma line 1 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/etc/autopilot_enum.h" 1 ::: 305
 #pragma line 67 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/hls_stream.h" 2 ::: 435
-#pragma line 45 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 2 ::: 536
+#pragma line 45 "pulse_cir_avg.cpp" 2 ::: 536
 #pragma line 1 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_int.h" 1 ::: 537
 #pragma line 60 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_int.h" ::: 589
 #pragma line 1 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_int_syn.h" 1 ::: 590
@@ -566,6 +566,6 @@
 #pragma line 2408 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_fixed_syn.h" ::: 38250
 #pragma line 2448 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_fixed_syn.h" ::: 38268
 #pragma line 62 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_int.h" 2 ::: 38275
-#pragma line 46 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 2 ::: 38739
-#pragma line 1 "Pulse_Avg/pulse_cir_avg/rfnoc.h" 1 ::: 38740
-#pragma line 47 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 2 ::: 38752
+#pragma line 46 "pulse_cir_avg.cpp" 2 ::: 38739
+#pragma line 1 "./rfnoc.h" 1 ::: 38740
+#pragma line 47 "pulse_cir_avg.cpp" 2 ::: 38752

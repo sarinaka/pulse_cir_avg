@@ -27,10 +27,11 @@
 								<option id="gnu.cpp.compiler.option.include.paths.2144232139" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
-									<listOptionValue builtIn="false" value="/home/radar"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/radar/Pulse_Avg/pulse_cir_avg"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/radar"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.1163000203" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="AESL_TB"/>
@@ -45,10 +46,11 @@
 								<option id="gnu.c.compiler.option.include.paths.566202073" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
-									<listOptionValue builtIn="false" value="/home/radar"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/radar/Pulse_Avg/pulse_cir_avg"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/radar"/>
 								</option>
 								<option id="gnu.c.compiler.option.preprocessor.def.symbols.1884583336" name="Defined symbols (-D)" superClass="gnu.c.compiler.option.preprocessor.def.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="AESL_TB"/>
@@ -113,10 +115,11 @@
 								<option id="gnu.cpp.compiler.option.include.paths.2001890547" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
-									<listOptionValue builtIn="false" value="/home/radar"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/radar/Pulse_Avg/pulse_cir_avg"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/radar"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.4387528" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -126,10 +129,11 @@
 								<option id="gnu.c.compiler.option.include.paths.2076325578" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/auto_cc/include"/>
-									<listOptionValue builtIn="false" value="/home/radar"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/etc"/>
+									<listOptionValue builtIn="false" value="/home/radar/Pulse_Avg/pulse_cir_avg"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/include/ap_sysc"/>
 									<listOptionValue builtIn="false" value="/opt/Xilinx/Vivado_HLS/2015.4/lnx64/tools/systemc/include"/>
+									<listOptionValue builtIn="false" value="/home/radar"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1946676413" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>

@@ -29,17 +29,17 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>/home/radar/pulse_cir_avg/.apc/.src</location>
+			<location>/home/radar/Pulse_Avg/pulse_cir_avg/pulse_cir_avg/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>/home/radar/pulse_cir_avg/.apc/.tb</location>
+			<location>/home/radar/Pulse_Avg/pulse_cir_avg/pulse_cir_avg/.apc/.tb</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>/home/radar/pulse_cir_avg/solution1/.tcls</location>
+			<location>/home/radar/Pulse_Avg/pulse_cir_avg/pulse_cir_avg/solution1/.tcls</location>
 		</link>
 		<link>
 			<name>source/pulse_cir_avg.cpp</name>
@@ -54,17 +54,17 @@
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>/home/radar/pulse_cir_avg/solution1/solution1.directive</location>
+			<location>/home/radar/Pulse_Avg/pulse_cir_avg/pulse_cir_avg/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>/home/radar/pulse_cir_avg/solution1/directives.tcl</location>
+			<location>/home/radar/Pulse_Avg/pulse_cir_avg/pulse_cir_avg/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>/home/radar/pulse_cir_avg/solution1/script.tcl</location>
+			<location>/home/radar/Pulse_Avg/pulse_cir_avg/pulse_cir_avg/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

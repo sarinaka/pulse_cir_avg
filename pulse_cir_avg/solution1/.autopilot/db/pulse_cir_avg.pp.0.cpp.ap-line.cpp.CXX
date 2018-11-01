@@ -1,5 +1,5 @@
-#pragma line 1 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" ::: 0
-#pragma line 1 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 1 ::: 1
+#pragma line 1 "pulse_cir_avg.cpp" ::: 0
+#pragma line 1 "pulse_cir_avg.cpp" 1 ::: 1
 #pragma line 1 "<built-in>" 1 ::: 2
 #pragma line 1 "<built-in>" 3 ::: 3
 #pragma line 155 "<built-in>" 3 ::: 4
@@ -9,11 +9,11 @@
 #pragma line 407 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/etc/autopilot_ssdm_op.h" ::: 198
 #pragma line 6 "<command line>" 2 ::: 201
 #pragma line 1 "<built-in>" 2 ::: 202
-#pragma line 1 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 2 ::: 203
+#pragma line 1 "pulse_cir_avg.cpp" 2 ::: 203
 #pragma line 1 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/hls_stream.h" 1 ::: 248
 #pragma line 1 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/etc/autopilot_enum.h" 1 ::: 315
 #pragma line 67 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/hls_stream.h" 2 ::: 445
-#pragma line 45 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 2 ::: 546
+#pragma line 45 "pulse_cir_avg.cpp" 2 ::: 546
 #pragma line 1 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_int.h" 1 ::: 547
 #pragma line 60 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_int.h" ::: 599
 #pragma line 1 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_int_syn.h" 1 ::: 600
@@ -560,6 +560,6 @@
 #pragma line 2408 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_fixed_syn.h" ::: 38240
 #pragma line 2448 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_fixed_syn.h" ::: 38258
 #pragma line 62 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_int.h" 2 ::: 38265
-#pragma line 46 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 2 ::: 38729
-#pragma line 1 "Pulse_Avg/pulse_cir_avg/rfnoc.h" 1 ::: 38730
-#pragma line 47 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 2 ::: 38742
+#pragma line 46 "pulse_cir_avg.cpp" 2 ::: 38729
+#pragma line 1 "./rfnoc.h" 1 ::: 38730
+#pragma line 47 "pulse_cir_avg.cpp" 2 ::: 38742

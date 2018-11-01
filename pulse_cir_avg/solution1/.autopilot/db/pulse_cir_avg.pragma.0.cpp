@@ -1,5 +1,5 @@
-#1 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp"
-#1 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 1
+#1 "pulse_cir_avg.cpp"
+#1 "pulse_cir_avg.cpp" 1
 #1 "<built-in>" 1
 #1 "<built-in>" 3
 #155 "<built-in>" 3
@@ -201,7 +201,7 @@ extern "C" {
 #define _ssdm_op_Delayed(X) X */
 #6 "<command line>" 2
 #1 "<built-in>" 2
-#1 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 2
+#1 "pulse_cir_avg.cpp" 2
 
 
 // Copyright (c) 2017 - WINLAB, Rutgers University, USA
@@ -544,7 +544,7 @@ class stream
 };
 
 } // namespace hls
-#45 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 2
+#45 "pulse_cir_avg.cpp" 2
 #1 "/opt/Xilinx/Vivado_HLS/2015.4/common/technology/autopilot/ap_int.h" 1
 // -*- c++ -*-
 /*
@@ -38747,8 +38747,8 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
     }
 
 };
-#46 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 2
-#1 "Pulse_Avg/pulse_cir_avg/rfnoc.h" 1
+#46 "pulse_cir_avg.cpp" 2
+#1 "./rfnoc.h" 1
 //Team WINLAB
 //RFNoC HLS Challenge
 /*rfnoc.h - Used to define custom AXI stream interface required for noc_blocks
@@ -38760,7 +38760,7 @@ struct ap_ufixed: ap_fixed_base<_AP_W, _AP_I, false, _AP_Q, _AP_O, _AP_N> {
      ap_int<32> data;
      ap_uint<1> last;
    };
-#47 "Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp" 2
+#47 "pulse_cir_avg.cpp" 2
 
 void pulse_cir_avg(hls::stream<rfnoc_axis> i_data, hls::stream<rfnoc_axis> o_data, ap_uint<32> threshold, ap_uint<16> seq_len, ap_uint<32> avg_size)
 {
@@ -38834,34 +38834,66 @@ void pulse_cir_avg(hls::stream<rfnoc_axis> i_data, hls::stream<rfnoc_axis> o_dat
    //           currentState = ST_FIRST_BLK;
       //            }
     //  }
+   wr_cnt = 0; // reset wr_cnt to zero
+
 
    seq_len_reg = seq_len;
    avg_size_reg = avg_size;
 
    if(data_in_valid)
    {
-    data_fifo.write(data_in_reg);
     wr_cnt = wr_cnt + 1;
     currentState = ST_FIRST_BLK;
-
+    if (avg_size_reg < 2 )
+    {
+      out_fifo.write(data_in_reg);
+    }
+    else{
+     data_fifo.write(data_in_reg); // First block/packet is stored in the data fifo
+        // if we have collected enough samples
+    }
+   }
+   else
+   {
+    wr_cnt = 0;
    }
      break;
     case ST_FIRST_BLK: // first pulse is sent/obtained
      if(data_in_valid)
      {
+     // handle case for 0 and 1
+     if (avg_size_reg < 2 )
+     {
+       out_fifo.write(data_in_reg);
+     }
+     else{
       data_fifo.write(data_in_reg); // First block/packet is stored in the data fifo
-               // if we have collected enough samples
+                // if we have collected enough samples
+     }
+
+
       if(wr_cnt == seq_len_reg - 1) // wr_cnt = sample count
       {
-       wr_cnt = 0; // reset wr_cnt to zero
-                   blk_cnt = 1; // set #pulses to 1 because we have obtained a full set of samples
-       currentState = ST_NOT_FIRST_BLK; // change states
+       wr_cnt = 0;
+       if(avg_size_reg <2 )
+       {
+        blk_cnt = 0;
+         currentState = ST_IDLE;
+         }
+      else
+       {
+        blk_cnt = 1; // set #pulses to 1 because we have obtained a full set of samples
+        currentState = ST_NOT_FIRST_BLK; // change states
+       }
+
       }
       else
       {
        wr_cnt = wr_cnt + 1; // increment
        currentState = ST_FIRST_BLK; // remain in the same state
       }
+
+
      }
      break;
         case ST_NOT_FIRST_BLK: // new state: not the first block

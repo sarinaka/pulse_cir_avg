@@ -41,9 +41,9 @@ set SCTraceFileName "mytrace"
 set SCTraceFileFormat "vcd"
 set SCTraceOption "all"
 set TargetInfo "xc7k325t:ffg900:-2"
-set SourceFiles {sc {} c ../../Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp}
+set SourceFiles {sc {} c ../../pulse_cir_avg.cpp}
 set SourceFlags {sc {} c {{}}}
-set DirectiveFile {/home/radar/pulse_cir_avg/solution1/solution1.directive}
+set DirectiveFile {/home/radar/Pulse_Avg/pulse_cir_avg/pulse_cir_avg/solution1/solution1.directive}
 set TBFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set SpecLanguage "C"
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

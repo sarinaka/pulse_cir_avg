@@ -117,34 +117,66 @@ void pulse_cir_avg(hls::stream<rfnoc_axis> i_data, hls::stream<rfnoc_axis> o_dat
 			//           currentState = ST_FIRST_BLK;
       //            }
 		  //  }
+			wr_cnt = 0; // reset wr_cnt to zero
+
 
 			seq_len_reg = seq_len;
 			avg_size_reg = avg_size;
 
 			if(data_in_valid)
 			{
-				data_fifo.write(data_in_reg);
 				wr_cnt = wr_cnt + 1;
 				currentState = ST_FIRST_BLK;
-
+				if (avg_size_reg < 2 )
+				{
+					 out_fifo.write(data_in_reg);
+				}
+				else{
+					data_fifo.write(data_in_reg); // First block/packet is stored in the data fifo
+								// if we have collected enough samples
+				}
 			}
-		   break;
+			else
+			{
+				wr_cnt = 0;
+			}
+   		break;
 	   case ST_FIRST_BLK:  // first pulse is sent/obtained
 		   if(data_in_valid)
 		   {
-			   data_fifo.write(data_in_reg); // First block/packet is stored in the data fifo
-               // if we have collected enough samples
+				 // handle case for 0 and 1
+				 if (avg_size_reg < 2 )
+				 {
+					 	out_fifo.write(data_in_reg);
+				 }
+				 else{
+					 data_fifo.write(data_in_reg); // First block/packet is stored in the data fifo
+	               // if we have collected enough samples
+				 }
+
+
 			   if(wr_cnt == seq_len_reg - 1) // wr_cnt = sample count
 			   {
-				   wr_cnt = 0; // reset wr_cnt to zero
-                   blk_cnt = 1; // set #pulses to 1 because we have obtained a full set of samples
-				   currentState = ST_NOT_FIRST_BLK; // change states
+					 	wr_cnt = 0;
+				  	if(avg_size_reg <2 )
+							{
+								blk_cnt = 0;
+							 	currentState = ST_IDLE;
+				    	}
+						else
+							{
+								blk_cnt = 1; // set #pulses to 1 because we have obtained a full set of samples
+								currentState = ST_NOT_FIRST_BLK; // change states
+							}
+
 			   }
 			   else
 			   {
 				   wr_cnt = wr_cnt + 1; // increment
 				   currentState = ST_FIRST_BLK; // remain in the same state
 			   }
+
+
 		   }
 		   break;
         case ST_NOT_FIRST_BLK: // new state: not the first block

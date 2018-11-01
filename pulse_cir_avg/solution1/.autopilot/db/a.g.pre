@@ -1,4 +1,4 @@
 #!/bin/sh
 lli=${LLVMINTERP-lli}
 exec $lli \
-    /home/radar/pulse_cir_avg/solution1/.autopilot/db/a.g.pre.bc ${1+"$@"}
+    /home/radar/Pulse_Avg/pulse_cir_avg/pulse_cir_avg/solution1/.autopilot/db/a.g.pre.bc ${1+"$@"}

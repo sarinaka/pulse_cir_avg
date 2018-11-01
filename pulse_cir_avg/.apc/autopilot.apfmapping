@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="pulse_cir_avg.cpp" path="/home/radar/Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp"/>
     <originFiles name="rfnoc.h" path="/home/radar/Pulse_Avg/pulse_cir_avg/rfnoc.h"/>
+    <originFiles name="pulse_cir_avg.cpp" path="/home/radar/Pulse_Avg/pulse_cir_avg/pulse_cir_avg.cpp"/>
   </source>
   <testbench/>
 </autopilotfilemapping:AutoPilotFileMapping>

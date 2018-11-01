@@ -69,14 +69,14 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_div, check your pla
 
 # FIFO definition:
 set ID 2
-set FifoName FIFO_pulse_cir_avg_data_fifo_V_V
+set FifoName FIFO_pulse_cir_avg_out_fifo_V_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
 set RegisteredInput 0
 set DualClock 0
-set Depth 8192
+set Depth 1024
 set DataWd 64
-set AddrWd 13
+set AddrWd 10
 set impl_style block
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
@@ -130,14 +130,14 @@ puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your pl
 
 # FIFO definition:
 set ID 3
-set FifoName FIFO_pulse_cir_avg_out_fifo_V_V
+set FifoName FIFO_pulse_cir_avg_data_fifo_V_V
 set CoreName ap_simcore_fifo
 set NumOfStage 2
 set RegisteredInput 0
 set DualClock 0
-set Depth 1024
+set Depth 8192
 set DataWd 64
-set AddrWd 10
+set AddrWd 13
 set impl_style block
 if {${::AESL::PGuard_simmodel_gen}} {
 if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {

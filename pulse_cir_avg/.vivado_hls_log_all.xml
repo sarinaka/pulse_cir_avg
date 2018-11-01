@@ -12,17 +12,17 @@
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="@W [RTGEN-101] Port 'pulse_cir_avg/threshold_V' has no fanin or fanout and is left dangling.&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="pulse_cir_avg" solutionName="solution1" date="2018-05-09T18:31:32.034-0700" type="Warning"/>
-        <logs message="@W [RTGEN-101] Register 'rd_cnt_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-05-09T18:31:31.991-0700" type="Warning"/>
-        <logs message="@W [RTGEN-101] Register 'out_sample_cnt_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-05-09T18:31:31.948-0700" type="Warning"/>
-        <logs message="@W [RTGEN-101] Register 'blk_cnt_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-05-09T18:31:31.946-0700" type="Warning"/>
-        <logs message="@W [RTGEN-101] Register 'wr_cnt_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-05-09T18:31:31.942-0700" type="Warning"/>
-        <logs message="@W [RTGEN-101] Register 'data_in_reg_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-05-09T18:31:31.939-0700" type="Warning"/>
-        <logs message="@W [RTGEN-101] Register 'data_in_valid_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-05-09T18:31:31.937-0700" type="Warning"/>
-        <logs message="@W [RTGEN-101] Register 'avg_size_reg_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-05-09T18:31:31.935-0700" type="Warning"/>
-        <logs message="@W [RTGEN-101] Register 'seq_len_reg_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-05-09T18:31:31.932-0700" type="Warning"/>
-        <logs message="@W [RTGEN-101] Register 'currentState' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-05-09T18:31:31.930-0700" type="Warning"/>
-        <logs message="@W [ANALYSIS-52] Setting false inter dependency for variable 'pfetch_data.V'." projectName="pulse_cir_avg" solutionName="solution1" date="2018-05-09T18:31:31.828-0700" type="Warning"/>
+        <logs message="@W [RTGEN-101] Port 'pulse_cir_avg/threshold_V' has no fanin or fanout and is left dangling.&#xA;               Please use C simulation to confirm this function argument can be read from or written to." projectName="pulse_cir_avg" solutionName="solution1" date="2018-10-31T16:15:52.263-0700" type="Warning"/>
+        <logs message="@W [RTGEN-101] Register 'rd_cnt_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-10-31T16:15:52.213-0700" type="Warning"/>
+        <logs message="@W [RTGEN-101] Register 'out_sample_cnt_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-10-31T16:15:52.160-0700" type="Warning"/>
+        <logs message="@W [RTGEN-101] Register 'blk_cnt_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-10-31T16:15:52.156-0700" type="Warning"/>
+        <logs message="@W [RTGEN-101] Register 'data_in_reg_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-10-31T16:15:52.153-0700" type="Warning"/>
+        <logs message="@W [RTGEN-101] Register 'data_in_valid_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-10-31T16:15:52.142-0700" type="Warning"/>
+        <logs message="@W [RTGEN-101] Register 'avg_size_reg_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-10-31T16:15:52.128-0700" type="Warning"/>
+        <logs message="@W [RTGEN-101] Register 'seq_len_reg_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-10-31T16:15:52.125-0700" type="Warning"/>
+        <logs message="@W [RTGEN-101] Register 'wr_cnt_V' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-10-31T16:15:52.120-0700" type="Warning"/>
+        <logs message="@W [RTGEN-101] Register 'currentState' is power-on initialization." projectName="pulse_cir_avg" solutionName="solution1" date="2018-10-31T16:15:52.115-0700" type="Warning"/>
+        <logs message="@W [ANALYSIS-52] Setting false inter dependency for variable 'pfetch_data.V'." projectName="pulse_cir_avg" solutionName="solution1" date="2018-10-31T16:15:51.997-0700" type="Warning"/>
       </synLog>
       <simLog/>
       <mgLog/>
