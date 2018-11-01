@@ -29,7 +29,7 @@
 <Resources>
 <BRAM_18K>36</BRAM_18K>
 <FF>7625</FF>
-<LUT>8650</LUT>
+<LUT>8639</LUT>
 <DSP48E>0</DSP48E>
 </Resources>
 </AreaEstimates>

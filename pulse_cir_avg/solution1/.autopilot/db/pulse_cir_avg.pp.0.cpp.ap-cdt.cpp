@@ -38834,8 +38834,6 @@ void pulse_cir_avg(hls::stream<rfnoc_axis> i_data, hls::stream<rfnoc_axis> o_dat
    //           currentState = ST_FIRST_BLK;
       //            }
     //  }
-   wr_cnt = 0; // reset wr_cnt to zero
-#pragma empty_line
 #pragma empty_line
    seq_len_reg = seq_len;
    avg_size_reg = avg_size;
@@ -38855,7 +38853,7 @@ void pulse_cir_avg(hls::stream<rfnoc_axis> i_data, hls::stream<rfnoc_axis> o_dat
    }
    else
    {
-    wr_cnt = 0;
+    wr_cnt = 0; // reset wr_cnt to zero
    }
      break;
     case ST_FIRST_BLK: // first pulse is sent/obtained

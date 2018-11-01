@@ -38858,8 +38858,6 @@ _ssdm_op_SpecReset( &threshold_met, 1, "");
    //           currentState = ST_FIRST_BLK;
       //            }
     //  }
-   wr_cnt = 0; // reset wr_cnt to zero
-
 
    seq_len_reg = seq_len;
    avg_size_reg = avg_size;
@@ -38879,7 +38877,7 @@ _ssdm_op_SpecReset( &threshold_met, 1, "");
    }
    else
    {
-    wr_cnt = 0;
+    wr_cnt = 0; // reset wr_cnt to zero
    }
      break;
     case ST_FIRST_BLK: // first pulse is sent/obtained
