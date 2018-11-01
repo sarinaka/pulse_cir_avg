@@ -38792,8 +38792,8 @@ _ssdm_op_SpecResource(&data_fifo, "", "FIFO_BRAM", "", -1, "", "", "");/*type of
 
 
  // 40 bits to accommodate for accumulation over 128 samples (max averaging size)
- //   static hls::stream<ap_uint<32> > out_fifo;
-    static hls::stream<ap_uint<64> > out_fifo;
+   static hls::stream<ap_uint<32> > out_fifo;
+    // static hls::stream<ap_uint<64> > out_fifo;
 _ssdm_SpecStream( &out_fifo, 1, 1024, "");
 _ssdm_op_SpecResource(&out_fifo, "", "FIFO_BRAM", "", -1, "", "", "");
 
@@ -38842,7 +38842,7 @@ _ssdm_op_SpecReset( &threshold_met, 1,  "");
    {
     wr_cnt = wr_cnt + 1;
     currentState = ST_FIRST_BLK;
-    if (avg_size_reg < 2 )
+    if (avg_size_reg <= 1 )
     {
       out_fifo.write(data_in_reg);
     }
@@ -38851,16 +38851,16 @@ _ssdm_op_SpecReset( &threshold_met, 1,  "");
         // if we have collected enough samples
     }
    }
-   else
-   {
-    wr_cnt = 0; // reset wr_cnt to zero
-   }
+    else
+    {
+     wr_cnt = 0; // reset wr_cnt to zero
+    }
      break;
     case ST_FIRST_BLK: // first pulse is sent/obtained
      if(data_in_valid)
      {
      // handle case for 0 and 1
-     if (avg_size_reg < 2 )
+     if (avg_size_reg <=1 )
      {
        out_fifo.write(data_in_reg);
      }
@@ -38873,13 +38873,12 @@ _ssdm_op_SpecReset( &threshold_met, 1,  "");
       if(wr_cnt == seq_len_reg - 1) // wr_cnt = sample count
       {
        wr_cnt = 0;
-       if(avg_size_reg <2 )
+       if(avg_size_reg <=1 )
        {
         blk_cnt = 0;
          currentState = ST_IDLE;
          }
-      else
-       {
+      else{
         blk_cnt = 1; // set #pulses to 1 because we have obtained a full set of samples
         currentState = ST_NOT_FIRST_BLK; // change states
        }
@@ -38894,59 +38893,59 @@ _ssdm_op_SpecReset( &threshold_met, 1,  "");
 
      }
      break;
-        case ST_NOT_FIRST_BLK: // new state: not the first block
-     if(data_in_valid)
-     {
-               if(blk_cnt < (avg_size_reg - 1)) // if we have not reached the desired number of pulses
-               {
-                   // continuous avg
-                   // data_in_reg2 (RR) * constant to undo avg
-                   //data_in_reg2 = data_in_reg*(n-1) + data_fifo.read();
-                   // data_in_reg3 <64>  = data_in_reg2/n
-                   // range is bit operation for division , first 32 bits
-                   // range(31, 0)
-                   // data_fifo.write(data_in_reg3);
+      case ST_NOT_FIRST_BLK: // new state: not the first block
+      if(data_in_valid)
+      {
+                if(blk_cnt < (avg_size_reg - 1)) // if we have not reached the desired number of pulses
+                {
+                    // continuous avg
+                    // data_in_reg2 (RR) * constant to undo avg
+                    //data_in_reg2 = data_in_reg*(n-1) + data_fifo.read();
+                    // data_in_reg3 <64>  = data_in_reg2/n
+                    // range is bit operation for division , first 32 bits
+                    // range(31, 0)
+                    // data_fifo.write(data_in_reg3);
 
-                     data_fifo.write(data_in_reg + data_fifo.read()); // subsequent blocks are added to the stored data (element by element) and stored back in the data fifo
+                      data_fifo.write(data_in_reg + data_fifo.read()); // subsequent blocks are added to the stored data (element by element) and stored back in the data fifo
 
-            if(wr_cnt == seq_len_reg - 1)
-            {
-            wr_cnt = 0;
-            blk_cnt = blk_cnt + 1;
-            currentState = ST_NOT_FIRST_BLK;
-            }
-            else
-            {
-            wr_cnt = wr_cnt + 1;
-            }
-               }
-               else
-               {
-                   // enough pulses have been collected
+                if(wr_cnt == seq_len_reg - 1)
+                {
+                  wr_cnt = 0;
+                  blk_cnt = blk_cnt + 1;
+                  currentState = ST_NOT_FIRST_BLK;
+                }
+                else
+                {
+                  wr_cnt = wr_cnt + 1;
+                }
+                }
+                else
+                {
+                    // enough pulses have been collected
 
 
-                      //tmp_data = ((data_in_reg + data_fifo.read())).range(31, 0); // division operation???????????????????????
-                   if (avg_size_reg != 0)
-                   {
-                       tmp_data = ((data_in_reg + data_fifo.read())) / avg_size_reg;
-                   }
-                   else
-                   {
-                  tmp_data = ((data_in_reg + data_fifo.read()));
-                   }
-                   out_fifo.write(tmp_data); // Average block is written to a different FIFO out_fifo
-                      if(wr_cnt == seq_len_reg - 1)
-                      {
-                         wr_cnt = 0;
-                         blk_cnt = 0;
-                         currentState = ST_IDLE;
-                      }
-                      else
-                      {
-                         wr_cnt = wr_cnt + 1;
-                      }
-               }
-     }
+                       //tmp_data = ((data_in_reg + data_fifo.read())).range(31, 0); // division operation???????????????????????
+                    if (avg_size_reg != 0)
+                    {
+                        tmp_data = ((data_in_reg + data_fifo.read())) / avg_size_reg;
+                    }
+                    else
+                    {
+                     tmp_data = ((data_in_reg + data_fifo.read()));
+                    }
+                    out_fifo.write(tmp_data); // Average block is written to a different FIFO out_fifo
+                     if(wr_cnt == seq_len_reg - 1)
+                     {
+                        wr_cnt = 0;
+                        blk_cnt = 0;
+                        currentState = ST_IDLE;
+                     }
+                     else
+                     {
+                        wr_cnt = wr_cnt + 1;
+                     }
+                }
+      }
      break;
         }
 

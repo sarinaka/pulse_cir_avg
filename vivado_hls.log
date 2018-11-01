@@ -1,5 +1,5 @@
 @I [HLS-10] Running '/opt/Xilinx/Vivado_HLS/2015.4/bin/unwrapped/lnx64.o/vivado_hls'
-            for user 'radar' on host 'radar-All-Series' (Linux_x86_64 version 3.16.0-30-generic) on Wed Oct 31 18:57:20 PDT 2018
+            for user 'radar' on host 'radar-All-Series' (Linux_x86_64 version 3.16.0-30-generic) on Wed Oct 31 20:06:34 PDT 2018
             in directory '/home/radar/Pulse_Avg/pulse_cir_avg'
 @I [HLS-10] Opening project '/home/radar/Pulse_Avg/pulse_cir_avg/pulse_cir_avg'.
 @I [HLS-10] Adding design file 'rfnoc.h' to the project
@@ -11,9 +11,9 @@
 @I [HLS-10] Validating synthesis directives ...
 @I [HLS-10] Starting code transformations ...
 @I [HLS-10] Checking synthesizability ...
-@I [XFORM-401] Performing if-conversion on hyperblock from (pulse_cir_avg.cpp:239:32) to (pulse_cir_avg.cpp:259:9) in function 'pulse_cir_avg'... converting 5 basic blocks.
+@I [XFORM-401] Performing if-conversion on hyperblock from (pulse_cir_avg.cpp:238:32) to (pulse_cir_avg.cpp:258:9) in function 'pulse_cir_avg'... converting 5 basic blocks.
 @W [ANALYSIS-52] Setting false inter dependency for variable 'pfetch_data.V'.
-@I [HLS-111] Elapsed time: 1.91452 seconds; current memory usage: 88 MB.
+@I [HLS-111] Elapsed time: 1.9239 seconds; current memory usage: 88.2 MB.
 @I [HLS-10] Starting hardware synthesis ...
 @I [HLS-10] Synthesizing 'pulse_cir_avg' ...
 @I [HLS-10] ----------------------------------------------------------------
@@ -23,7 +23,7 @@
 @I [SCHED-61] Pipelining function 'pulse_cir_avg'.
 @I [SCHED-61] Pipelining result: Target II: 1, Final II: 1, Depth: 74.
 @I [SCHED-11] Finished scheduling.
-@I [HLS-111] Elapsed time: 0.051099 seconds; current memory usage: 90.5 MB.
+@I [HLS-111] Elapsed time: 0.048438 seconds; current memory usage: 90.5 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Exploring micro-architecture for module 'pulse_cir_avg' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -32,7 +32,7 @@
 @I [BIND-101] Exploring resource sharing.
 @I [BIND-101] Binding ...
 @I [BIND-100] Finished micro-architecture generation.
-@I [HLS-111] Elapsed time: 0.035765 seconds; current memory usage: 91.4 MB.
+@I [HLS-111] Elapsed time: 0.036831 seconds; current memory usage: 91.3 MB.
 @I [HLS-10] ----------------------------------------------------------------
 @I [HLS-10] -- Generating RTL for module 'pulse_cir_avg' 
 @I [HLS-10] ----------------------------------------------------------------
@@ -57,7 +57,7 @@
                Please use C simulation to confirm this function argument can be read from or written to.
 @I [RTGEN-100] Generating core module 'pulse_cir_avg_udiv_65ns_32ns_65_69': 1 instance(s).
 @I [RTGEN-100] Finished creating RTL model for 'pulse_cir_avg'.
-@I [HLS-111] Elapsed time: 0.147165 seconds; current memory usage: 94.3 MB.
+@I [HLS-111] Elapsed time: 0.13904 seconds; current memory usage: 94.2 MB.
 @I [RTMG-282] Generating pipelined core: 'pulse_cir_avg_udiv_65ns_32ns_65_69_div'
 @I [RTMG-285] Implementing FIFO 'FIFO_pulse_cir_avg_out_fifo_V_V' using Block RAMs.
 @I [RTMG-285] Implementing FIFO 'FIFO_pulse_cir_avg_data_fifo_V_V' using Block RAMs.
@@ -65,4 +65,4 @@
 @I [WSYSC-301] Generating RTL SystemC for 'pulse_cir_avg'.
 @I [WVHDL-304] Generating RTL VHDL for 'pulse_cir_avg'.
 @I [WVLOG-307] Generating RTL Verilog for 'pulse_cir_avg'.
-@I [HLS-112] Total elapsed time: 8.982 seconds; peak memory usage: 94.3 MB.
+@I [HLS-112] Total elapsed time: 9.611 seconds; peak memory usage: 94.2 MB.

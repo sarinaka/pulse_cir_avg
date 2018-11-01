@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'pulse_cir_avg'" level="0">
-<item name = "Date">Wed Oct 31 18:57:29 2018
+<item name = "Date">Wed Oct 31 20:06:43 2018
 </item>
 <item name = "Version">2015.4 (Build 1412921 on Wed Nov 18 09:58:55 AM 2015)</item>
 <item name = "Project">pulse_cir_avg</item>
@@ -46,14 +46,14 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="5">Name, BRAM_18K, DSP48E, FF, LUT</keys>
 <column name="DSP">-, -, -, -</column>
-<column name="Expression">-, -, 0, 416</column>
-<column name="FIFO">36, -, 271, 806</column>
+<column name="Expression">-, -, 0, 414</column>
+<column name="FIFO">34, -, 239, 773</column>
 <column name="Instance">-, -, 6732, 6732</column>
 <column name="Memory">-, -, -, -</column>
-<column name="Multiplexer">-, -, -, 232</column>
-<column name="Register">-, -, 622, 453</column>
+<column name="Multiplexer">-, -, -, 200</column>
+<column name="Register">-, -, 622, 261</column>
 <specialColumn name="Available">890, 840, 407600, 203800</specialColumn>
-<specialColumn name="Utilization (%)">4, 0, 1, 4</specialColumn>
+<specialColumn name="Utilization (%)">3, 0, 1, 4</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -74,71 +74,69 @@
 <item name = "FIFO"><table name="" hasTotal="1">
 <keys size="7">Name, BRAM_18K, FF, LUT, Depth, Bits, Size:D*B</keys>
 <column name="data_fifo_V_V_data_fifo_V_V_fifo_U">32, 173, 669, 8192, 64, 524288</column>
-<column name="out_fifo_V_V_out_fifo_V_V_fifo_U">4, 98, 137, 1024, 64, 65536</column>
+<column name="out_fifo_V_V_out_fifo_V_V_fifo_U">2, 66, 104, 1024, 32, 32768</column>
 </table>
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="grp_fu_244_p2">+, 0, 0, 10, 10, 1</column>
-<column name="r_V_1_fu_342_p2">+, 0, 0, 17, 17, 2</column>
-<column name="r_V_2_fu_396_p2">+, 0, 0, 17, 17, 2</column>
-<column name="r_V_3_fu_504_p2">+, 0, 0, 65, 65, 65</column>
-<column name="r_V_5_fu_310_p2">+, 0, 0, 17, 17, 2</column>
-<column name="r_V_6_fu_571_p2">+, 0, 0, 17, 2, 17</column>
-<column name="r_V_fu_290_p2">+, 0, 0, 33, 33, 2</column>
-<column name="tmp_17_fu_617_p2">+, 0, 0, 9, 1, 9</column>
-<column name="tmp_18_fu_587_p2">+, 0, 0, 10, 1, 10</column>
-<column name="tmp_5_fu_358_p2">+, 0, 0, 8, 8, 1</column>
-<column name="tmp_V_3_fu_543_p2">+, 0, 0, 64, 64, 64</column>
-<column name="tmp_data_V_fu_531_p2">+, 0, 0, 32, 32, 32</column>
-<column name="storemerge2_fu_422_p3">Select, 0, 0, 3, 1, 1</column>
-<column name="storemerge4_fu_593_p3">Select, 0, 0, 10, 1, 1</column>
-<column name="storemerge_fu_629_p3">Select, 0, 0, 9, 1, 1</column>
-<column name="ap_sig_bdd_1381">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_1390">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_1430">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_2490">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_2492">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_2495">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_2497">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_2501">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_2502">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_2504">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_2506">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_2509">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_2511">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_2513">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_2516">and, 0, 0, 1, 1, 1</column>
-<column name="ap_sig_bdd_279">and, 0, 0, 1, 1, 1</column>
+<column name="grp_fu_249_p2">+, 0, 0, 10, 10, 1</column>
+<column name="r_V_1_fu_347_p2">+, 0, 0, 17, 17, 2</column>
+<column name="r_V_2_fu_401_p2">+, 0, 0, 17, 17, 2</column>
+<column name="r_V_3_fu_509_p2">+, 0, 0, 65, 65, 65</column>
+<column name="r_V_5_fu_315_p2">+, 0, 0, 17, 17, 2</column>
+<column name="r_V_6_fu_565_p2">+, 0, 0, 17, 17, 2</column>
+<column name="r_V_fu_295_p2">+, 0, 0, 33, 33, 2</column>
+<column name="tmp_17_fu_611_p2">+, 0, 0, 9, 9, 1</column>
+<column name="tmp_18_fu_581_p2">+, 0, 0, 10, 10, 1</column>
+<column name="tmp_5_fu_363_p2">+, 0, 0, 8, 8, 1</column>
+<column name="tmp_V_4_fu_535_p2">+, 0, 0, 64, 64, 64</column>
+<column name="tmp_data_V_fu_553_p2">+, 0, 0, 32, 32, 32</column>
+<column name="storemerge2_fu_427_p3">Select, 0, 0, 3, 1, 1</column>
+<column name="storemerge4_fu_587_p3">Select, 0, 0, 10, 1, 1</column>
+<column name="storemerge_fu_623_p3">Select, 0, 0, 9, 1, 1</column>
+<column name="ap_sig_bdd_1319">and, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_1328">and, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_1368">and, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_2425">and, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_2427">and, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_2430">and, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_2432">and, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_2436">and, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_2437">and, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_2439">and, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_2441">and, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_2445">and, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_297">and, 0, 0, 1, 1, 1</column>
 <column name="ap_sig_bdd_65">and, 0, 0, 1, 1, 1</column>
-<column name="tmp_19_nbreadreq_fu_138_p4">and, 0, 0, 2, 1, 0</column>
-<column name="icmp5_fu_386_p2">icmp, 0, 0, 11, 31, 1</column>
-<column name="icmp_fu_471_p2">icmp, 0, 0, 11, 31, 1</column>
-<column name="tmp_13_fu_320_p2">icmp, 0, 0, 6, 17, 17</column>
-<column name="tmp_15_fu_611_p2">icmp, 0, 0, 3, 9, 9</column>
-<column name="tmp_16_fu_581_p2">icmp, 0, 0, 6, 17, 17</column>
-<column name="tmp_4_fu_406_p2">icmp, 0, 0, 6, 17, 17</column>
-<column name="tmp_7_fu_300_p2">icmp, 0, 0, 11, 33, 33</column>
-<column name="tmp_8_fu_352_p2">icmp, 0, 0, 6, 17, 17</column>
-<column name="tmp_9_fu_491_p2">icmp, 0, 0, 11, 32, 1</column>
-<column name="ap_sig_bdd_269">or, 0, 0, 1, 1, 1</column>
+<column name="tmp_19_nbreadreq_fu_142_p4">and, 0, 0, 2, 1, 0</column>
+<column name="icmp5_fu_391_p2">icmp, 0, 0, 11, 31, 1</column>
+<column name="icmp_fu_476_p2">icmp, 0, 0, 11, 31, 1</column>
+<column name="tmp_13_fu_325_p2">icmp, 0, 0, 6, 17, 17</column>
+<column name="tmp_15_fu_605_p2">icmp, 0, 0, 3, 9, 9</column>
+<column name="tmp_16_fu_575_p2">icmp, 0, 0, 6, 17, 17</column>
+<column name="tmp_4_fu_411_p2">icmp, 0, 0, 6, 17, 17</column>
+<column name="tmp_7_fu_305_p2">icmp, 0, 0, 11, 33, 33</column>
+<column name="tmp_8_fu_357_p2">icmp, 0, 0, 6, 17, 17</column>
+<column name="tmp_9_fu_496_p2">icmp, 0, 0, 11, 32, 1</column>
+<column name="ap_sig_bdd_119">or, 0, 0, 1, 1, 1</column>
+<column name="ap_sig_bdd_287">or, 0, 0, 1, 1, 1</column>
 <column name="ap_sig_bdd_85">or, 0, 0, 1, 1, 1</column>
-<column name="tmp_last_V_fu_623_p2">or, 0, 0, 1, 1, 1</column>
-<column name="not_tmp_3_fu_412_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="tmp_last_V_fu_617_p2">or, 0, 0, 1, 1, 1</column>
+<column name="not_tmp_3_fu_417_p2">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_reg_phiprechg_p_4_reg_235pp0_it71">32, 2, 32, 64</column>
-<column name="ap_reg_phiprechg_seq_len_reg_V_loc_reg_221pp0_it1">16, 3, 16, 48</column>
+<column name="ap_reg_phiprechg_seq_len_reg_V_loc_reg_225pp0_it1">16, 3, 16, 48</column>
+<column name="ap_reg_phiprechg_tmp_V_6_reg_239pp0_it71">32, 2, 32, 64</column>
 <column name="ap_sig_ioackin_o_data_TREADY">1, 2, 1, 2</column>
 <column name="blk_cnt_V">8, 3, 8, 24</column>
 <column name="currentState">2, 4, 2, 8</column>
 <column name="data_fifo_V_V_din">64, 4, 64, 256</column>
-<column name="out_fifo_V_V_din">64, 4, 64, 256</column>
-<column name="p_4_phi_fu_238_p4">32, 2, 32, 64</column>
-<column name="storemerge3_phi_fu_203_p4">2, 3, 2, 6</column>
-<column name="storemerge5_phi_fu_213_p4">1, 3, 1, 3</column>
+<column name="out_fifo_V_V_din">32, 3, 32, 96</column>
+<column name="storemerge3_phi_fu_207_p4">2, 3, 2, 6</column>
+<column name="storemerge5_phi_fu_217_p4">1, 3, 1, 3</column>
+<column name="tmp_V_6_phi_fu_242_p4">32, 2, 32, 64</column>
 <column name="wr_cnt_V">10, 2, 10, 20</column>
 </table>
 </item>
@@ -146,8 +144,8 @@
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">1, 0, 1, 0</column>
 <column name="ap_reg_ioackin_o_data_TREADY">1, 0, 1, 0</column>
-<column name="ap_reg_phiprechg_p_4_reg_235pp0_it71">32, 0, 32, 0</column>
-<column name="ap_reg_phiprechg_seq_len_reg_V_loc_reg_221pp0_it1">16, 0, 16, 0</column>
+<column name="ap_reg_phiprechg_seq_len_reg_V_loc_reg_225pp0_it1">16, 0, 16, 0</column>
+<column name="ap_reg_phiprechg_tmp_V_6_reg_239pp0_it71">32, 0, 32, 0</column>
 <column name="ap_reg_ppiten_pp0_it1">1, 0, 1, 0</column>
 <column name="ap_reg_ppiten_pp0_it10">1, 0, 1, 0</column>
 <column name="ap_reg_ppiten_pp0_it11">1, 0, 1, 0</column>
@@ -221,44 +219,43 @@
 <column name="ap_reg_ppiten_pp0_it73">1, 0, 1, 0</column>
 <column name="ap_reg_ppiten_pp0_it8">1, 0, 1, 0</column>
 <column name="ap_reg_ppiten_pp0_it9">1, 0, 1, 0</column>
-<column name="ap_reg_ppstg_avg_size_reg_V_load_reg_659_pp0_it1">32, 0, 32, 0</column>
+<column name="ap_reg_ppstg_avg_size_reg_V_load_reg_653_pp0_it1">32, 0, 32, 0</column>
 <column name="avg_size_reg_V">32, 0, 32, 0</column>
-<column name="avg_size_reg_V_load_reg_659">32, 0, 32, 0</column>
+<column name="avg_size_reg_V_load_reg_653">32, 0, 32, 0</column>
 <column name="blk_cnt_V">8, 0, 8, 0</column>
 <column name="currentState">2, 0, 2, 0</column>
-<column name="currentState_load_reg_648">2, 0, 2, 0</column>
+<column name="currentState_load_reg_642">2, 0, 2, 0</column>
 <column name="data_in_reg_V">32, 0, 32, 0</column>
-<column name="data_in_reg_V_load_reg_701">32, 0, 32, 0</column>
 <column name="data_in_valid_V">1, 0, 1, 0</column>
-<column name="data_in_valid_V_load_reg_665">1, 0, 1, 0</column>
-<column name="icmp5_reg_681">1, 0, 1, 0</column>
-<column name="icmp_reg_688">1, 0, 1, 0</column>
+<column name="data_in_valid_V_load_reg_659">1, 0, 1, 0</column>
+<column name="icmp5_reg_675">1, 0, 1, 0</column>
+<column name="icmp_reg_682">1, 0, 1, 0</column>
 <column name="out_sample_cnt_V">9, 0, 9, 0</column>
-<column name="r_V_3_reg_713">65, 0, 65, 0</column>
+<column name="r_V_3_reg_708">65, 0, 65, 0</column>
 <column name="rd_cnt_V">10, 0, 10, 0</column>
 <column name="seq_len_reg_V">16, 0, 16, 0</column>
-<column name="seq_len_reg_V_loc_reg_221">16, 0, 16, 0</column>
-<column name="tmp_10_reg_718">32, 0, 32, 0</column>
-<column name="tmp_16_reg_752">1, 0, 1, 0</column>
-<column name="tmp_19_reg_692">1, 0, 1, 0</column>
-<column name="tmp_7_reg_669">1, 0, 1, 0</column>
-<column name="tmp_9_reg_709">1, 0, 1, 0</column>
-<column name="tmp_V_2_reg_723">64, 0, 64, 0</column>
-<column name="tmp_data_V_1_9_reg_696">32, 0, 32, 0</column>
-<column name="tmp_data_V_1_reg_733">32, 0, 32, 0</column>
-<column name="tmp_data_V_7_reg_747">32, 0, 32, 0</column>
-<column name="tmp_reg_743">1, 0, 1, 0</column>
+<column name="seq_len_reg_V_loc_reg_225">16, 0, 16, 0</column>
+<column name="tmp_10_reg_713">32, 0, 32, 0</column>
+<column name="tmp_16_reg_747">1, 0, 1, 0</column>
+<column name="tmp_19_reg_686">1, 0, 1, 0</column>
+<column name="tmp_7_reg_663">1, 0, 1, 0</column>
+<column name="tmp_9_reg_704">1, 0, 1, 0</column>
+<column name="tmp_V_3_reg_718">64, 0, 64, 0</column>
+<column name="tmp_V_8_reg_742">32, 0, 32, 0</column>
+<column name="tmp_V_reg_695">32, 0, 32, 0</column>
+<column name="tmp_data_V_1_9_reg_690">32, 0, 32, 0</column>
+<column name="tmp_data_V_1_reg_728">32, 0, 32, 0</column>
+<column name="tmp_reg_738">1, 0, 1, 0</column>
 <column name="wr_cnt_V">10, 0, 10, 0</column>
-<column name="currentState_load_reg_648">0, 6, 2, 0</column>
-<column name="data_in_reg_V_load_reg_701">0, 96, 32, 0</column>
-<column name="data_in_valid_V_load_reg_665">0, 3, 1, 0</column>
-<column name="icmp5_reg_681">0, 3, 1, 0</column>
-<column name="icmp_reg_688">0, 3, 1, 0</column>
-<column name="seq_len_reg_V_loc_reg_221">0, 48, 16, 0</column>
-<column name="tmp_10_reg_718">0, 96, 32, 0</column>
-<column name="tmp_7_reg_669">0, 3, 1, 0</column>
-<column name="tmp_9_reg_709">0, 3, 1, 0</column>
-<column name="tmp_V_2_reg_723">0, 192, 64, 0</column>
+<column name="currentState_load_reg_642">0, 6, 2, 0</column>
+<column name="data_in_valid_V_load_reg_659">0, 3, 1, 0</column>
+<column name="icmp5_reg_675">0, 3, 1, 0</column>
+<column name="icmp_reg_682">0, 3, 1, 0</column>
+<column name="seq_len_reg_V_loc_reg_225">0, 48, 16, 0</column>
+<column name="tmp_10_reg_713">0, 96, 32, 0</column>
+<column name="tmp_7_reg_663">0, 3, 1, 0</column>
+<column name="tmp_9_reg_704">0, 3, 1, 0</column>
+<column name="tmp_V_reg_695">0, 96, 32, 0</column>
 </table>
 </item>
 </section>
@@ -289,9 +286,9 @@
 <item name = "Max Delay">4.27</item>
 <item name = "Critical Path Table"><table name="Critical Path Table" hasTotal="0">
 <keys size="15">Name, Operator, Delay, Accumulated Delay, Store Source, Resource, Core, Interface, Type, Port, Array, Scope, Pointer, Callee, Phi Node</keys>
-<column name="'tmp.V', pulse_cir_avg.cpp:218">read, 2.19, 2.19, -, -, -, fifo, read, &apos;data_fifo_V_V&apos;, -, -, -, -, -</column>
-<column name="'rhs.V', pulse_cir_avg.cpp:214">zext, 0.00, 2.19, -, -, -, -, -, -, -, -, -, -, -</column>
-<column name="'r.V', pulse_cir_avg.cpp:214">add, 2.08, 4.27, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'tmp.V', pulse_cir_avg.cpp:217">read, 2.19, 2.19, -, -, -, fifo, read, &apos;data_fifo_V_V&apos;, -, -, -, -, -</column>
+<column name="'rhs.V', pulse_cir_avg.cpp:213">zext, 0.00, 2.19, -, -, -, -, -, -, -, -, -, -, -</column>
+<column name="'r.V', pulse_cir_avg.cpp:213">add, 2.08, 4.27, -, -, -, -, -, -, -, -, -, -, -</column>
 </table>
 </item>
 </section>

@@ -13,7 +13,7 @@ use ieee.numeric_std.all;
 entity FIFO_pulse_cir_avg_out_fifo_V_V is
     generic (
         MEM_STYLE  : string  := "block";
-        DATA_WIDTH : natural := 64;
+        DATA_WIDTH : natural := 32;
         ADDR_WIDTH : natural := 10;
         DEPTH      : natural := 1024
     );

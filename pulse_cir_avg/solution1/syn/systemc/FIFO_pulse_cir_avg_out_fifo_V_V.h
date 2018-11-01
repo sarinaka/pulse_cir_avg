@@ -11,7 +11,7 @@
 #include <systemc>
 using namespace std;
 SC_MODULE(FIFO_pulse_cir_avg_out_fifo_V_V) {
-    static const unsigned int DATA_WIDTH = 64;
+    static const unsigned int DATA_WIDTH = 32;
     static const unsigned int ADDR_WIDTH = 11;
     static const unsigned int FIFO_pulse_cir_avg_out_fifo_V_V_depth = 1025;
     sc_core::sc_in_clk clk;

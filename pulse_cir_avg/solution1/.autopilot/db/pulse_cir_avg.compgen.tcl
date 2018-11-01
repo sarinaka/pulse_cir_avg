@@ -75,7 +75,7 @@ set NumOfStage 2
 set RegisteredInput 0
 set DualClock 0
 set Depth 1024
-set DataWd 64
+set DataWd 32
 set AddrWd 10
 set impl_style block
 if {${::AESL::PGuard_simmodel_gen}} {
